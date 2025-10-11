@@ -1,0 +1,39 @@
+Rubric Metrics:
+
+Total number of functions (all files): 174
+
+Total number of statements (all files): 1,741
+
+Total number of imported libraries (all files): 74
+
+Total number of variables (all files): 1,625
+
+Total number of lines of code (all files): 2,356
+
+
+Prompts Used:
+
+1. You are a program analyzer. Analyze the attached zip file to identify the following metrics for each of the Python program files in e7.zip. Number of functions, statements, imported libraries, variables, and lines of code.
+2. Provide the total number of functions, statements, imported libraries, variables, and number of lines of code for all files. 
+
+
+Output from the GenAI tool:
+
+| File                      | #Functions | #Statements | #Imports | #Variables | #Lines |
+| ------------------------- | ---------- | ----------- | -------- | ---------- | ------ |
+| repo_name_downloader.py   | 9          | 115         | 12       | 59         | 151    |
+| vaccum-cleaner.py         | 6          | 101         | 11       | 79         | 141    |
+| _TestAggregate.py         | 2          | 26          | 7        | 26         | 33     |
+| _TestCrossScriptTaints.py | 19         | 93          | 5        | 160        | 118    |
+| _TestEmpirical.py         | 20         | 69          | 4        | 20         | 96     |
+| _TestIntegration.py       | 2          | 14          | 3        | 4          | 26     |
+| _TestSmells.py            | 35         | 142         | 4        | 250        | 183    |
+| _TestTaintTracking.py     | 20         | 130         | 6        | 187        | 158    |
+| _test_constants.py        | 0          | 98          | 0        | 97         | 130    |
+| constants.py              | 0          | 103         | 0        | 102        | 118    |
+| graph.py                  | 6          | 99          | 3        | 53         | 156    |
+| orchestra.py              | 32         | 432         | 9        | 377        | 565    |
+| parser.py                 | 17         | 221         | 3        | 138        | 300    |
+| taintpup_main.py          | 6          | 98          | 7        | 73         | 181    |
+
+The second output is pasted above in the rubric metrics

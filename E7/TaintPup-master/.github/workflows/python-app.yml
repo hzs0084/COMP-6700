@@ -1,0 +1,43 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Build TaintPupp 
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Puppet dependencies 
+      run: | 
+        wget https://apt.puppetlabs.com/puppet6-release-xenial.deb
+        sudo dpkg -i puppet6-release-xenial.deb
+        sudo apt update
+        sudo apt-get install puppet
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        pip install requests
+        pip install pandas
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run integration and taint-related tests 
+      run: |
+        cd TaintPupCode 
+        # python _TestIntegration.py 
+        # python _TestTaintTracking.py
+        # python _TestEmpirical.py
+        # python _TestSmells.py
+        # python _TestAggregate.py
