@@ -1,0 +1,53 @@
+=== Parse Tree (abbrev) ===
+Module(
+  body=[
+    FunctionDef(
+      name='simpleCalculator',
+      args=arguments(
+        args=[
+          arg(arg='v1'),
+          arg(arg='v2'),
+          arg(arg='operation')]),
+      body=[
+        Assign(
+          targets=[
+            Name(id='res', ctx=Store())],
+          value=Constant(value=0)),
+        If(
+          test=Compare(
+            left=Name(id='operation', ctx=Load()),
+            ops=[
+              Eq()],
+            comparators=[
+              Constant(value='+')]),
+          body=[
+            Assign(
+              targets=[
+                Name(id='res', ctx=St ...
+
+=== Functions Discovered ===
+- simpleCalculator(v1, v2, operation) with 3 stmt(s)
+
+=== Constant-Propagated Values ===
+{'res': 900, 'val1': 1000, 'val2': -100, 'op': '+', 'v1': 1000, 'v2': -100, 'operation': '+'}
+
+=== Data-Flow Edges ===
+     src        dst    kind
+0      0        res  assign
+1     v1        res   binop
+2     v2        res   binop
+3     v2        res   binop
+4     v1        res   binop
+5     v2        res   binop
+6     v2        res   binop
+7   1000       val1  assign
+8   -100       val2  assign
+9      +         op  assign
+10  val1         v1   param
+11  val2         v2   param
+12    op  operation   param
+13    v1        res   binop
+14    v2        res   binop
+
+=== Output Flow ===
+-100 -> val2 -> v2 -> res -> 900
