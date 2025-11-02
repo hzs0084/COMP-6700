@@ -1,0 +1,15 @@
+2025-11-02 13:45:31 The calculator application has started...
+2025-11-02 13:45:31 The arguments that were provided -> a:10, b:5 (method=add)
+2025-11-02 13:45:31 add returned 15
+2025-11-02 13:45:31 The arguments that were provided -> a:3, b:1 (method=mul)
+2025-11-02 13:45:31 mul returned 3
+2025-11-02 13:45:31 The arguments that were provided -> a:10, b:0 (method=simpleDiv)
+2025-11-02 13:45:31 Exception in simpleDiv(a=10, b=0): division by zero
+Traceback (most recent call last):
+  File "/home/hzs0084/Downloads/Cybersecurity/GitHub/COMP-6700/E11/calc.py", line 19, in wrapper
+    result = func(a, b)
+             ^^^^^^^^^^
+  File "/home/hzs0084/Downloads/Cybersecurity/GitHub/COMP-6700/E11/calc.py", line 31, in simpleDiv
+    return a / b
+           ~~^~~
+ZeroDivisionError: division by zero
