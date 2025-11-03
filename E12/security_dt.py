@@ -5,7 +5,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
-DATASET_PATH = "DATASET.csv"   # <-- your actual file
+DATASET_PATH = "DATASET.csv"   # CSV file
 
 
 def load_dataset(path: str) -> pd.DataFrame:
